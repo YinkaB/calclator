@@ -20,6 +20,7 @@ class Calculator {
       if (number === '.' && this.currentOperand.includes('.')) return
       // appending number to the screen instead of adding them up
       this.currentOperand = this.currentOperand.toString() + number.toString()
+      
     }
     // Function for operation buttons
     chooseOperation(operation) {
@@ -54,7 +55,7 @@ class Calculator {
         default:
           return
       }
-      this.currentOperand = computation
+      this.currentOperand = computation.toFixed(7)
       this.operation = undefined
       this.previousOperand = ''
     }
